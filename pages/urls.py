@@ -6,4 +6,5 @@ from pages import views
 
 urlpatterns = [
     path('', views.homeview, name='home'),
+    path('supplier.html', views.homeview, name='supplier'),
 ]
