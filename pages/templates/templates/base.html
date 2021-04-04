@@ -54,9 +54,19 @@
     </div>
   </nav>
 
-  <!-- <div class="container">
-      <div class="jumbotron rounded fill-light" id='eventIndexBanner'>
-          <p>Our Mission</p>
-          <p>{{missions}}</p>
-      </div> -->
+  <div class="container">
+    <div class="jumbotron rounded fill-light" id='eventIndexBanner'>
+      <p>Our Mission</p>
+      {% if mission_statement %}
+        <ul>
+        {% for mission in mission_statement %}
+          <li>{{ mission.description}}</a></li>
+        {% endfor %}
+        </ul>
+      {% else %}
+        <p>No Mission Statement.</p>
+      {% endif %}
+    </div>
+  </div>
+  
   </div>
