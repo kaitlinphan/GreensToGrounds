@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django import forms
+from django.views.generic.edit import FormView
 
 from .models import Mission
 
@@ -12,3 +14,23 @@ def homeview(request):
     #     context = {"missions" : "no mission statement"}
     # return render(request, 'templates/home.html', context)
     return render(request, 'templates/home.html')
+
+
+class OrderForm(forms.Form):
+    name = forms.CharField()
+    message = forms.CharField(widget=forms.Textarea)
+
+    def place_order(self):
+        pass
+
+class OrderFormView(FormView):
+    template_name = 'orderform.html'
+    form_class = OrderForm
+    success_url = '/order'
+
+    def form_valid(self, form):
+        form.place_order()
+        return super().form_valid(form)
+
+
+
