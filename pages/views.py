@@ -15,7 +15,7 @@ def homeview(request):
     # else:
     #     context = {"missions" : "no mission statement"}
     # return render(request, 'templates/home.html', context)
-    return render(request, 'templates/home.html')
+    return render(request, 'pages/home.html')
 
 
 # class OrderForm(forms.Form):
@@ -26,7 +26,7 @@ def homeview(request):
 #         pass
 
 class OrderFormView(FormView):
-    template_name = 'template/orderform.html'
+    template_name = 'templates/orderform.html'
     form_class = OrderForm
     success_url = '/order'
 
