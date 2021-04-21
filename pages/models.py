@@ -22,6 +22,10 @@ class Product(models.Model):
     class Meta:
         abstract = True
 
+class Order(models.Model):
+    name = models.CharField(max_length=100)
+    produce_box = models.CharField(max_length=100)
+
 class SeasonLongProduct(Product):
     SEASONS = [("Sp", "Spring"), ("Fa", "Fall")]
     season = models.CharField(max_length=2, choices=SEASONS)
