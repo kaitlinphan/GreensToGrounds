@@ -1,4 +1,10 @@
 from django import forms
+from .models import Order
 
-class OrderForm(forms.Form):
-    your_name = forms.CharField(label='Your name', max_length=100)
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ('name', 'produce_box')
+    # name = forms.CharField()
+    # def place_order(self):
+    #     pass
