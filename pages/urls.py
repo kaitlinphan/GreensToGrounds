@@ -4,10 +4,10 @@ from .views import homeview
 from . import views
 from pages import views
 from django.views.generic.edit import FormView
-from pages import OrderFormView
+from .views import OrderFormView
 
 urlpatterns = [
     path('', views.homeview, name='home'),
     path('supplier.html', views.homeview, name='supplier'),
-    path('/order', OrderFormView.as_view(), name='orderform'),
+    path('orderform', OrderFormView.as_view(), name='orderform'),
 ]
