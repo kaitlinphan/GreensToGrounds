@@ -26,7 +26,7 @@ def homeview(request):
 #         pass
 
 class OrderFormView(FormView):
-    template_name = 'templates/orderform.html'
+    template_name = 'g2g/orderform.html'
     form_class = OrderForm
     success_url = '/order'
 
