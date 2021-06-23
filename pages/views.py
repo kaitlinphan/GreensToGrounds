@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse
 from django import forms
 from . import forms
 from django.views.generic.edit import FormView, CreateView
-from pages.forms import OrderForm
+from .forms import OrderForm
 
 from .models import Mission, Order
 
@@ -41,5 +42,5 @@ class OrderCreateView(CreateView):
         form.place_order()
         return super().form_valid(form)
 
-
-
+def calendar_view(request):
+    return render(request, "pages/calendar.html")
