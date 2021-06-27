@@ -44,3 +44,16 @@ class OrderCreateView(CreateView):
 
 def calendar_view(request):
     return render(request, "pages/calendar.html")
+
+# temporary for navbar
+def blog_view(request):
+    return render(request, "g2g/blog.html")
+
+def social_view(request):
+    return render(request, "g2g/social.html")
+
+def FAQ_view(request):
+    return render(request, "g2g/FAQ.html")
+
+def supplier_view(request):
+    return render(request, "g2g/supplier.html")
