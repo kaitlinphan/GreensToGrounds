@@ -41,5 +41,21 @@ class OrderCreateView(CreateView):
         form.place_order()
         return super().form_valid(form)
 
+def calendar_view(request):
+    return render(request, "pages/calendar.html")
+
+# temporary for navbar
+def blog_view(request):
+    return render(request, "g2g/blog.html")
+
+def social_view(request):
+    return render(request, "g2g/social.html")
+
+def FAQ_view(request):
+    return render(request, "g2g/FAQ.html")
+
+def supplier_view(request):
+    return render(request, "g2g/supplier.html")
+
 def press_view(request):
-    return render(request, 'g2g/press.html')
+    return render(request, "g2g/press.html")
