@@ -6,3 +6,15 @@
     margin: 0 auto;
     padding-top: 2vh;
 }
+
+.questions_container {
+    background-color: #b1da60;
+}
+
+.question {
+    padding: 5vh 15vw 0 15vw;
+}
+
+.answer {
+    padding: 1vh 15vw 0 15vw;
+}
