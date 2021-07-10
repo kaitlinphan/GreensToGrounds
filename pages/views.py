@@ -41,5 +41,5 @@ class OrderCreateView(CreateView):
         form.place_order()
         return super().form_valid(form)
 
-
-
+def faq_view(request):
+    return render(request, 'g2g/FAQ.html')

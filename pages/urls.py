@@ -11,4 +11,5 @@ urlpatterns = [
     path('', views.homeview, name='home'),
     path('supplier.html', views.homeview, name='supplier'),
     path('orderform', OrderCreateView.as_view(), name='orderform'),
+    path('faq.html', views.faq_view, name='faq'),
 ]
