@@ -12,9 +12,9 @@
 }
 
 .question {
-    padding: 5vh 15vw 0 15vw;
+    padding-top: 5vh;
 }
 
 .answer {
-    padding: 1vh 15vw 0 15vw;
+    padding-top: 1vh;
 }
