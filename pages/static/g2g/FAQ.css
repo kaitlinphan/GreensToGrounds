@@ -1,0 +1,20 @@
+.header-container {
+    height: 150px;
+}
+
+.logo-icon {
+    margin: 0 auto;
+    padding-top: 2vh;
+}
+
+.questions_container {
+    background-color: #b1da60;
+}
+
+.question {
+    padding-top: 5vh;
+}
+
+.answer {
+    padding-top: 1vh;
+}
