@@ -1,0 +1,72 @@
+{% extends 'pages/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'g2g/press.css' %}">
+
+<div class="header-container">
+    <header>
+        <div class="d-flex justify-content-center logo-icon">
+            <img src="{% static 'images/presslogo.png' %}" style="height:70px">
+        </div>
+        <div class="d-flex justify-content-center">
+            <h3>Greens to Grounds in the news</h3>
+        </div>
+    </header>
+</div>
+
+
+<div class="press-container">
+    <div class="container">
+        <ul>
+            <span class="press-cards">
+                <img src="{% static 'images/starternoise.png' %}" alt="starternoise">
+                <a href="http://www.starternoise.com/campus-get-better-food-students/" target="_blank">
+                    "What This Campus Did to Get Better Food to Students" <br> - Caitlin O'Brien
+                </a>
+            </span>
+            <span class="press-cards">
+                <img src="{% static 'images/wuva.png' %}" alt="WUVA">
+                <a href="http://www.starternoise.com/campus-get-better-food-students/" target="_blank">
+                    "Sustainability Straight to Students"
+                </a>
+            </span>
+            <span class="press-cards">
+                <img src="{% static 'images/spoon_uni.png' %}" alt="spoon university">
+                <a href="http://uva.spoonuniversity.com/live/this-uva-student-run-organization-makes-buying-fresh-produce-easier-than-ever/"
+                    target="_blank">
+                    "This UVA Student-Run Organization Makes Buying Fresh Produce Easier Than Ever" <br> - Stephanie
+                    DeVaux
+                </a>
+            </span>
+            <span class="press-cards">
+                <img src="{% static 'images/startup.png' %}" alt="startup">
+                <a href="http://www.collegestartup.org/2015/03/27/boxed-sunshine-your-own-farmers-market/"
+                    target="_blank">
+                    "Boxed Sunshine: Your own Farmers Market"
+                </a>
+            </span>
+            <span class="press-cards">
+                <img src="{% static 'images/cavdaily_press.png' %}" alt="Cavalier Daily">
+                <a href="http://www.cavalierdaily.com/article/2017/04/uva-kicks-off-earth-week-with-farmers-market"
+                    target="_blank">
+                    "This UVA Student-Run Organization Makes Buying Fresh Produce Easier Than Ever" <br> - Stephanie
+                    DeVaux
+                </a>
+            </span>
+            <span class="press-cards">
+                <img src="{% static 'images/cavdaily.png' %}" alt="cavalier daily">
+                <a href="http://www.cavalierdaily.com/article/2014/09/bringing-greens-to-grounds" target="_blank">
+                    "Bringing Greens to Grounds"
+                </a>
+                <br>
+                <a href="http://www.cavalierdaily.com/article/2014/10/aljassar-living-locally" target="_blank">
+                    "Living Locally"
+                </a>
+            </span>
+        </ul>
+    </div>
+</div>
+{% endblock content %}

@@ -57,3 +57,6 @@ def FAQ_view(request):
 
 def supplier_view(request):
     return render(request, "g2g/supplier.html")
+
+def press_view(request):
+    return render(request, "g2g/press.html")
