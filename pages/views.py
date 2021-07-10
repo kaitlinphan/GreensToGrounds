@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse
 from django import forms
 from . import forms
 from django.views.generic.edit import FormView, CreateView
-from pages.forms import OrderForm
+from .forms import OrderForm
 
 from .models import Order
 
@@ -41,5 +42,21 @@ class OrderCreateView(CreateView):
         form.place_order()
         return super().form_valid(form)
 
-def faq_view(request):
-    return render(request, 'g2g/FAQ.html')
+def calendar_view(request):
+    return render(request, "pages/calendar.html")
+
+# temporary for navbar
+def blog_view(request):
+    return render(request, "g2g/blog.html")
+
+def social_view(request):
+    return render(request, "g2g/social.html")
+
+def FAQ_view(request):
+    return render(request, "g2g/FAQ.html")
+
+def supplier_view(request):
+    return render(request, "g2g/supplier.html")
+
+def press_view(request):
+    return render(request, "g2g/press.html")
