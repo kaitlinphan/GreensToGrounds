@@ -1,11 +1,12 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse
 from django import forms
 from . import forms
 from django.views.generic.edit import FormView, CreateView
-from pages.forms import OrderForm
+from .forms import OrderForm
 
-from .models import Mission, Order
+from .models import Order
 
 def homeview(request):
     # return HttpResponse('Hello, World! Welcome to the new Greens to Grounds website!')
