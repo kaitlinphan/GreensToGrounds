@@ -1,0 +1,38 @@
+.home_background_img {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/home.jpg);
+    background-size: cover;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+.g2g_logo {
+    padding: 25vh 0 0 0;
+}
+
+.mission {
+
+    padding: 5vh 0 5vh 0;
+    font-size: 1.2em;
+}
+
+.box_and_order {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.whats_in_the_box {
+    width: 48vw;
+    min-width: 200px;
+    padding: 5vh 5vw 5vh 2vw;
+    background-color: #c9fe65;
+}
+
+.order_now {
+    width: 48vw;
+    min-width: 200px;
+    padding: 5vh 5vw 5vh 2vw;
+    background-color: lightgray;
+}
