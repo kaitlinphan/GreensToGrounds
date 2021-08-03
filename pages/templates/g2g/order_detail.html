@@ -1,0 +1,23 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+    <div class="container">
+        <div class="row">
+            <p>{{ product.name }} | <a href="{% url 'pages:order_index' %}">All Products </a> &gt;
+                {{ product.name }}
+            </p>
+            <p1>
+                <h2>{{ product.name }}</h2>
+                <p>Price ${{ product.price }}</p>
+                    <form action="{% url 'pages:order_detail' product.id %}" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <input type="submit" value="Add to cart" class="btn btn-primary" >
+                    </form>
+            </p1>
+        </div>
+    </div>
+</body>
+{% endblock content %}

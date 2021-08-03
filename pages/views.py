@@ -1,10 +1,11 @@
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponse
 from django import forms
 from . import forms
-from django.views.generic.edit import FormView, CreateView
-from .forms import OrderForm
+from .models import Product, Order
+from .forms import OrderForm, CheckoutForm
+from . import cart
+from django.contrib import messages
 
 from .models import Order
 
@@ -21,26 +22,76 @@ def homeview(request):
 
 # def place_order(request):
 #     form = OrderForm(request.POST)
+def order_index_view(request):
+    all_products = Product.objects.all()
+    return render(request, "g2g/order_index.html", {
+        'all_products': all_products
+    })
 
+def order_detail_view(request, pk):
+    product = get_object_or_404(Product, id=pk)
 
-class OrderFormView(FormView):
-    template_name = 'g2g/order_form.html'
-    form_class = OrderForm
-    success_url = 'orderform'
+    if request.method == 'POST':
+        form = OrderForm(request, request.POST)
+        if form.is_valid():
+            request.form_data = form.cleaned_data
+            cart.add_item_to_cart(request)
+            return redirect('show_cart')
 
-    def form_valid(self, form):
-        form.place_order()
-        return super().form_valid(form)
+    form = OrderForm(request, initial={'product_id': product.id})
+    return render(request, 'g2g/order_detail.html', {
+                                            'product': product,
+                                            'form': form,
+    })
 
-class OrderCreateView(CreateView):
-    model = Order
-    form_class = OrderForm
-    template_name = 'g2g/order_form.html'
-    # fields = ['name']
+def show_cart(request):
 
-    def form_valid(self, form):
-        form.place_order()
-        return super().form_valid(form)
+    if request.method == 'POST':
+        if request.POST.get('submit') == 'Update':
+            cart.update_item(request)
+        if request.POST.get('submit') == 'Remove':
+            cart.remove_item(request)
+
+    cart_items = cart.get_all_cart_items(request)
+    cart_subtotal = cart.subtotal(request)
+    return render(request, 'g2g/cart.html', {
+                                            'cart_items': cart_items,
+                                            'cart_subtotal': cart_subtotal,
+                                            })  
+
+def checkout(request):
+    if request.method == 'POST':
+        form = CheckoutForm(request.POST)
+        if form.is_valid():
+            cleaned_data = form.cleaned_data
+            o = Order(
+                name = cleaned_data.get('name'),
+                email = cleaned_data.get('email'),
+                phone_number = cleaned_data.get('phone_number')
+            )
+            o.save()
+
+            all_items = cart.get_all_cart_items(request)
+            for cart_item in all_items:
+                '''li = LineItem(
+                    product_id = cart_item.product_id,
+                    price = cart_item.price,
+                    quantity = cart_item.quantity,
+                    order_id = o.id
+                )
+
+                li.save()'''
+
+            cart.clear(request)
+
+            request.session['order_id'] = o.id
+
+            messages.add_message(request, messages.INFO, 'Order Placed!')
+            return redirect('checkout')
+
+    else:
+        form = CheckoutForm()
+        return render(request, 'g2g/checkout.html', {'form': form})                                          
 
 def calendar_view(request):
     return render(request, "pages/calendar.html")

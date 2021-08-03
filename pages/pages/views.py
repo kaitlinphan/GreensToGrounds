@@ -1,11 +1,13 @@
-from django.shortcuts import render
+from pages import cart
+from django.shortcuts import get_object_or_404, redirect, render
 from django.http import HttpResponse
 from django import forms
 from . import forms
 from django.views.generic.edit import FormView, CreateView
-from pages.forms import OrderForm
+from pages.forms import CheckoutForm, OrderForm
+from django.contrib import messages
 
-from .models import Mission, Order
+from pages.models import Mission, Order, Product
 
 def homeview(request):
     # return HttpResponse('Hello, World! Welcome to the new Greens to Grounds website!')
@@ -22,24 +24,24 @@ def homeview(request):
 #     form = OrderForm(request.POST)
 
 
-class OrderFormView(FormView):
-    template_name = 'g2g/order_form.html'
-    form_class = OrderForm
-    success_url = 'orderform'
+# class OrderFormView(FormView):
+#     template_name = 'g2g/order_form.html'
+#     form_class = OrderForm
+#     success_url = 'orderform'
 
-    def form_valid(self, form):
-        form.place_order()
-        return super().form_valid(form)
+#     def form_valid(self, form):
+#         form.place_order()
+#         return super().form_valid(form)
 
-class OrderCreateView(CreateView):
-    model = Order
-    form_class = OrderForm
-    template_name = 'g2g/order_form.html'
-    # fields = ['name']
+# class OrderCreateView(CreateView):
+#     model = Order
+#     form_class = OrderForm
+#     template_name = 'g2g/order_form.html'
+#     # fields = ['name']
 
-    def form_valid(self, form):
-        form.place_order()
-        return super().form_valid(form)
+#     def form_valid(self, form):
+#         form.place_order()
+#         return super().form_valid(form)
 
 
 
