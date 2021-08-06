@@ -3,12 +3,16 @@ body {
   }
 
 .header-container {
-    /* background-color: #b1da60; */
+    background-color: #b1da60;
     text-align: center;
     padding-top: 58px;
     height: 200px;
+    margin-bottom: 52px;
 
-    font-size: 50px;
+    font-size: 60px;
+    font-weight: 600;
+    text-shadow: 1.5px 1.5px 5px #e0e0e0;
+    color: #e6e6e6;
 
 }
 
