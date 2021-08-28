@@ -2,15 +2,77 @@
 
 {% load static %}
 
-{% block content %}
-<head>
-    <title>
-        Supplier Info
-    </title>
-</head>
-<body>
-    <div class="container">
-        Hello World, SUPPLIER
+{% block title %}
+
+<link rel="stylesheet" href="{% static 'g2g/supplier.css' %}">
+
+<div class="header-container">
+    <div style="position: relative; top: -58px;">
+        <img src="{% static 'images/supplier_banner.png' %}" style="height:350px">
     </div>
-</body>
-{% endblock content %}
+</div>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <h6>
+        Greens to Grounds sources local products from a variety of farms, gardens and value-added producers from in and
+        around
+        the Charlottesville/Albemarle County foodshed. This includes products which we source directly from farms,
+        bakeries,
+        cheese-makers, and community gardens, and produce conglomerated from multiple farms by the Local Food Hub. Here
+        are
+        some
+        of our favorite producers we’ve been proud to work with over the past few years:
+    </h6>
+</div>
+
+<div class="supplier_row">
+    <div class="floated_img">
+        <img src="{% static 'images/local_food_hub.png' %}">
+        <div class="image-text">Local Food Hub</div>
+    </div>
+    <div class="floated_img">
+        <img src="{% static 'images/shady_lane.png' %}">
+        <div class="image-text">Shady Lane Family Farm</div>
+    </div>
+    <div class="floated_img">
+        <img src="{% static 'images/caramont_farm.png' %}">
+        <div class="image-text">Caramont Farm</div>
+    </div>
+    <div class="floated_img">
+        <img src="{% static 'images/marie_bette_cafe.png' %}">
+        <div class="image-text">MarieBette Cafe & Bakery</div>
+    </div>
+    <div class="floated_img">
+        <img src="{% static 'images/carpe_donut.png' %}">
+        <div class="image-text">Carpe Donut</div>
+    </div>
+    <div class="floated_img">
+        <img src="{% static 'images/woodsons_mill.jpg' %}">
+        <div class="image-text">Woodson's Mill</div>
+    </div>
+
+
+    <body>
+        <div class="container">
+            {% for supplier in supplier_list %}
+            <div class="supplier">
+                <h4>{{ supplier.name }}</h4>
+                <p>{{ supplier.address }}</p>
+                <p>{{ supplier.producers }}</p>
+                <p>{{ supplier.founded }}</p>
+                <!-- {% if supplier.extra_details %}
+                {% for title,detail in supplier.extra_details.items %}
+                <p>{{ title }}: {{ detail }}</p>
+                {% endfor %}
+                {% endif %} -->
+                <p>{{ supplier.url }}</p>
+                <p><br>{{ supplier.details }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+
+    {% endblock content %}
