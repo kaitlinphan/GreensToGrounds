@@ -15,22 +15,13 @@
 {% block navbar %}
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2e2e2e;">
   <a class="navbar-brand" href="/">
-    <img src="">
+    <img src="{% static 'images/g2glogo.png' %}" style="height: 50px; margin: 5px;">
   </a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="orderform">Order Form</a>
-      </li>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto" style="margin-left: 1vw; font-size: 18;">
       <li class="nav-item">
         <a class="nav-link" href="calendar.html">Calendar</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="social.html">Social Media</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="press.html">Press</a>
@@ -40,13 +31,13 @@
           aria-expanded="false">About Us</a>
         <div class="dropdown-menu" aria-labelledby="about_us">
           <a class="dropdown-item" href="https://greenstogrounds.wordpress.com/">Blog</a>
-          <a class="dropdown-item" href="supplier.html">Supplier Info</a>
+          <a class="dropdown-item" href="supplier.html">Suppliers</a>
           <a class="dropdown-item" href="FAQ.html">FAQ</a>
         </div>
       </li>
-
     </ul>
   </div>
+  <a class="btn btn-outline-light" type="submit" href="orderform" style="font-size: 18;">Order Now!</a>
 </nav>
 {% endblock navbar %}
 
@@ -84,8 +75,8 @@
       </div>
       <div class="footer-heading footer3">
         <h2>Social Media</h2>
-        <a href="https://www.facebook.com/greenstogrounds/timeline?ref=page_internal">Facebook</a>
-        <a href="https://www.instagram.com/greenstogrounds/">Instagram</a>
+        <a target="_blank" href="https://www.facebook.com/greenstogrounds/timeline?ref=page_internal">Facebook</a>
+        <a target="_blank" href="https://www.instagram.com/greenstogrounds/">Instagram</a>
         <!-- <a href="https://www.facebook.com/greenstogrounds/timeline?ref=page_internal" class="fa fa-facebook"></a> -->
       </div>
       <div class="footer-copyright">
