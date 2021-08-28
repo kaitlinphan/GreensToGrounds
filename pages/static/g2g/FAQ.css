@@ -1,6 +1,6 @@
 body {
     background-color: #fafafa;
-  }
+}
 
 .header-container {
     background-color: #b1da60;
@@ -13,7 +13,6 @@ body {
     font-weight: 600;
     text-shadow: 1.5px 1.5px 5px #e0e0e0;
     color: #e6e6e6;
-
 }
 
 .logo-icon {
@@ -37,7 +36,7 @@ body {
 .ans-contain {
     display: none;
 }
-      
+
 .ques {
     width: 90%;
     margin: 0 auto;
