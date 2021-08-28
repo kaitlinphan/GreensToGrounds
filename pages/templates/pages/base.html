@@ -32,7 +32,7 @@
         <a class="nav-link" href="supplier.html">Supplier Info</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="blog.html">Blog</a>
+        <a class="nav-link" href="https://greenstogrounds.wordpress.com/">Blog</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="calendar.html">Calendar</a>
@@ -64,9 +64,24 @@
 </main>
 {% endblock content %}
 
+{% block footer %}
+<link rel="stylesheet" href="{% static 'g2g/base.css' %}">
+
+<body>
+  <div class="footer-container">
+    <div class="footer">
+      <div class="footer-heading left">
+        <h2>Contact Us</h2>
+      </div>
+      <div class="footer-heading right">
+        <h2>Social Media</h2>
+      </div>
+      <div class="footer-copyright">
+        hello
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock footer %}
+
 </html>
-<!-- <div class="container">
-      <div class="jumbotron rounded fill-light" id='eventIndexBanner'>
-          <p>Our Mission</p>
-          <p>{{missions}}</p>
-      </div> -->

@@ -1,0 +1,27 @@
+.footer-container{
+    /* border-top: 2px solid black;
+    position: absolute;
+    left: 4%;
+    right: 4%; */
+
+    background-color: #2e2e2e;
+
+
+}
+
+.footer{
+    background-color: #2e2e2e;
+
+}
+
+.footer-heading{
+    background-color: #2e2e2e;
+}
+
+.footer-heading h2{
+    color: white;
+}
+
+.footer-copyright{
+    background-color: #b1da60;
+}
