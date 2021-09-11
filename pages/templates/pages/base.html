@@ -13,41 +13,31 @@
 </head>
 
 {% block navbar %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2e2e2e;">
+  <a class="navbar-brand" href="/">
+    <img src="{% static 'images/g2glogo.png' %}" style="height: 50px; margin: 5px;">
+  </a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="orderform">Order Form</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="supplier.html">Supplier Info</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://greenstogrounds.wordpress.com/">Blog</a>
-      </li>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto" style="margin-left: 1vw; font-size: 18;">
       <li class="nav-item">
         <a class="nav-link" href="calendar.html">Calendar</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="FAQ.html">FAQ</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="social.html">Social Media</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="press.html">Press</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="about_us_dropdown" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">About Us</a>
+        <div class="dropdown-menu" aria-labelledby="about_us">
+          <a class="dropdown-item" href="https://greenstogrounds.wordpress.com/">Blog</a>
+          <a class="dropdown-item" href="supplier.html">Suppliers</a>
+          <a class="dropdown-item" href="FAQ.html">FAQ</a>
+        </div>
       </li>
     </ul>
   </div>
+  <a class="btn btn-outline-light" type="submit" href="orderform" style="font-size: 18;">Order Now!</a>
 </nav>
 {% endblock navbar %}
 
@@ -80,21 +70,22 @@
       <div class="footer-heading footer2">
         <h2>Contact Us</h2>
         <a>Email:</a>
-        <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=greenstogrounds@gmail.com">greenstogrounds@gmail.com</a>
+        <a
+          href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=greenstogrounds@gmail.com">greenstogrounds@gmail.com</a>
       </div>
       <div class="footer-heading footer3">
         <h2>Social Media</h2>
-        <a href="https://www.facebook.com/greenstogrounds/timeline?ref=page_internal">Facebook</a>
-        <a href="https://www.instagram.com/greenstogrounds/">Instagram</a>
+        <a target="_blank" href="https://www.facebook.com/greenstogrounds/timeline?ref=page_internal">Facebook</a>
+        <a target="_blank" href="https://www.instagram.com/greenstogrounds/">Instagram</a>
         <!-- <a href="https://www.facebook.com/greenstogrounds/timeline?ref=page_internal" class="fa fa-facebook"></a> -->
       </div>
       <div class="footer-copyright">
         <h1>© Katz, O'Neil & Graham | All Rights Reserved | Privacy Policy</h1>
-        <a>Although this organization has members who are University of Virginia students and may have 
-          University employees associated or engaged in its activities and affairs, the organization is 
-          not a part of or an agency of the University. It is a separate and independent organization 
-          which is responsible for and manages its own activities and affairs. The University does not 
-          direct, supervise or control the organization and is not responsible for the organization's 
+        <a>Although this organization has members who are University of Virginia students and may have
+          University employees associated or engaged in its activities and affairs, the organization is
+          not a part of or an agency of the University. It is a separate and independent organization
+          which is responsible for and manages its own activities and affairs. The University does not
+          direct, supervise or control the organization and is not responsible for the organization's
           contracts, acts or omissions.</a>
       </div>
     </div>
