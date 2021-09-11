@@ -23,22 +23,30 @@
             a weekly
             basis, while providing local farmers and artisans with dedicated support from the University community. Join
             us in
-            eating well, supporting Central Virginia farmers, and celebrating local food.</p>
+            eating well, supporting Central Virginia farmers, and celebrating local food!</p>
     </div>
 </div>
 
-<div class="box_and_order">
+<div class="boxes">
     <div class="whats_in_the_box">
-        <h2>What's in the the boxes</h2>
+        <h2 style="margin-bottom:5vh">What's in the the boxes</h2>
+        {% for box in monthly_boxes %}
         <div>
-            <h5>March</h5>
-            <p>Apples, Spinach, Herbs</p>
+            <h5>{{box.0}}</h5>
+            <p>{{box.1}}</p>
         </div>
+        {% endfor %}
     </div>
-    <div class="order_now">
+    <img class="box_example" src="{% static 'images/boxexample1.jpg' %}">
+</div>
+
+<div class="order_now">
+    <div class="container">
         <h2>Ready to get started?</h2>
         <p>Choose between pre-built snack boxes and produce boxes, delivered weekly.<br> Starting at only $10!</p>
+        <a class="btn btn-outline-dark" type="submit" href="orderform" style="font-size: 18;">Order Now!</a>
     </div>
 </div>
+
 
 {% endblock content %}

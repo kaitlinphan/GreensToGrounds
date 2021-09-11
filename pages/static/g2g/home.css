@@ -12,26 +12,26 @@
 }
 
 .mission {
-
     padding: 5vh 0 5vh 0;
     font-size: 1.2em;
 }
 
-.box_and_order {
+.boxes {
     display: flex;
     flex-flow: row wrap;
 }
 
 .whats_in_the_box {
-    width: 48vw;
-    min-width: 200px;
+    width: 49vw;
     padding: 5vh 5vw 5vh 2vw;
     background-color: #c9fe65;
 }
 
+.box_example {
+    width: 49vw
+}
+
 .order_now {
-    width: 48vw;
-    min-width: 200px;
-    padding: 5vh 5vw 5vh 2vw;
+    padding: 5vh 0 5vh 0;
     background-color: lightgray;
 }
