@@ -24,41 +24,54 @@
         cheese-makers, and community gardens, and produce conglomerated from multiple farms by the Local Food Hub. Here
         are
         some
-        of our favorite producers we’ve been proud to work with over the past few years:
+        of our favorite producers we’ve been proud to work with over the past few years.
     </h6>
 </div>
 
 <div class="supplier_row">
     <div class="floated_img">
         <img src="{% static 'images/local_food_hub.png' %}">
-        <div class="image-text">Local Food Hub</div>
+        <a href="#Local Food Hub">
+            <div class="image-text">Local Food Hub</div>
+        </a>
+
     </div>
     <div class="floated_img">
         <img src="{% static 'images/shady_lane.png' %}">
-        <div class="image-text">Shady Lane Family Farm</div>
+        <a href="#Shady Lane Family Farm">
+            <div class="image-text">Shady Lane Family Farm</div>
+        </a>
     </div>
     <div class="floated_img">
         <img src="{% static 'images/caramont_farm.png' %}">
-        <div class="image-text">Caramont Farm</div>
+        <a href="#Caromont Farm">
+            <div class="image-text">Caromont Farm</div>
+        </a>
     </div>
     <div class="floated_img">
         <img src="{% static 'images/marie_bette_cafe.png' %}">
-        <div class="image-text">MarieBette Cafe & Bakery</div>
+        <a href="#MarieBette Cafe & Bakery">
+            <div class="image-text">MarieBette Cafe & Bakery</div>
+        </a>
     </div>
     <div class="floated_img">
         <img src="{% static 'images/carpe_donut.png' %}">
-        <div class="image-text">Carpe Donut</div>
+        <a href="#Carpe Donut">
+            <div class="image-text">Carpe Donut</div>
+        </a>
     </div>
     <div class="floated_img">
         <img src="{% static 'images/woodsons_mill.jpg' %}">
-        <div class="image-text">Woodson's Mill</div>
+        <a href="#Woodson's Mill">
+            <div class="image-text">Woodson's Mill</div>
+        </a>
     </div>
 
 
     <body>
         <div class="container">
             {% for supplier in supplier_list %}
-            <div class="supplier">
+            <div class="supplier" id="{{supplier.name}}">
                 <h4>{{ supplier.name }}</h4>
                 <p>{{ supplier.address }}</p>
                 <p>{{ supplier.producers }}</p>
@@ -68,7 +81,7 @@
                 <p>{{ title }}: {{ detail }}</p>
                 {% endfor %}
                 {% endif %} -->
-                <p>{{ supplier.url }}</p>
+                <a target="_blank" href="https://{{ supplier.url }}">Learn More</a>
                 <p><br>{{ supplier.details }}</p>
             </div>
             {% endfor %}
