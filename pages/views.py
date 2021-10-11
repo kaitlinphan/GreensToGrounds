@@ -9,14 +9,15 @@ from .forms import OrderForm
 from .models import Order
 
 def homeview(request):
-    # return HttpResponse('Hello, World! Welcome to the new Greens to Grounds website!')
-    # if Mission.objects.all().count()>0:
-    #     mission = Mission.objects.get(pk=1)
-    #     context = {"missions" : mission}
-    # else:
-    #     context = {"missions" : "no mission statement"}
-    # return render(request, 'templates/home.html', context)
-    return render(request, 'pages/home.html')
+    context = {
+        'monthly_boxes': [
+            ('March', 'Apples, Spinach, Herbs'),
+            ('April', 'Apples, Asparagus, Spinach, Herbs, Strawberries, Onions'),
+            ('May', 'Asparagus, Beets, Spinach, Herbs, Strawberries, Onions'),
+            ('Add-Ons (Vary Weekly)', 'Cheese, Freshly-Baked Bread, Granola, Chorizo Sausage, Pastured Ground Beef, Hummus, Queso, Salsa, Apple Cider Donuts, Eggs, Honey'),
+        ]
+    }
+    return render(request, 'pages/home.html', context)
 
 
 # def place_order(request):
