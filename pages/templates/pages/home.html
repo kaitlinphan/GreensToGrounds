@@ -3,9 +3,50 @@
 {% load static %}
 
 {% block content %}
-<body>
-    <div class="container">
-        Hello World, HOME
+
+<link rel="stylesheet" href="{% static 'g2g/home.css' %}">
+
+<div class="home_background_img">
+    <div class="container g2g_logo">
+        <img src="{% static 'images/g2glogo.png' %}" style="height:50vh">
     </div>
-</body>
+</div>
+
+<div class="container">
+    <div class="mission">
+        <h2>Our Mission</h2>
+        <p>We are a non-profit, student-run CSA (community supported agriculture) model bringing fresh, local produce
+            and specialty
+            items to the UVA community. We strive to foster a more sustainable relationship between UVA and
+            Charlottesville food
+            producers. We seek to provide students, faculty, and staff with access to fresh, seasonal, and local food on
+            a weekly
+            basis, while providing local farmers and artisans with dedicated support from the University community. Join
+            us in
+            eating well, supporting Central Virginia farmers, and celebrating local food!</p>
+    </div>
+</div>
+
+<div class="boxes">
+    <div class="whats_in_the_box">
+        <h2 style="margin-bottom:5vh">What's in the the boxes</h2>
+        {% for box in monthly_boxes %}
+        <div>
+            <h5>{{box.0}}</h5>
+            <p>{{box.1}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <img class="box_example" src="{% static 'images/boxexample1.jpg' %}">
+</div>
+
+<div class="order_now">
+    <div class="container">
+        <h2>Ready to get started?</h2>
+        <p>Choose between pre-built snack boxes and produce boxes, delivered weekly.<br> Starting at only $10!</p>
+        <a class="btn btn-outline-dark" type="submit" href="orderform" style="font-size: 18;">Order Now!</a>
+    </div>
+</div>
+
+
 {% endblock content %}
