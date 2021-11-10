@@ -82,7 +82,10 @@
                 {% endfor %}
                 {% endif %} -->
                 <a target="_blank" href="https://{{ supplier.url }}">Learn More</a>
+                <details>
+                <summary>Supplier Summary</summary>
                 <p><br>{{ supplier.details }}</p>
+                </details>
             </div>
             {% endfor %}
         </div>

@@ -19,6 +19,7 @@
 .boxes {
     display: flex;
     flex-flow: row wrap;
+    text-align: center;
 }
 
 .whats_in_the_box {
@@ -33,5 +34,6 @@
 
 .order_now {
     padding: 5vh 0 5vh 0;
-    background-color: lightgray;
+    text-align: center;
+    /*background-color: lightgray;*/
 }
