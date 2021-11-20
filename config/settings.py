@@ -74,16 +74,42 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+# # Database
+# # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+# Sources:
+# REFERENCES
+# URL: https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+# Software License: BSD
+# Title: StackOverFlow
+# URL: https://stackoverflow.com/questions/9383450/how-can-i-detect-herokus-environment
+# Software License: Creative Commons
+# Title: Heroku
+# URL: https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-python
+
+import dj_database_url
+
+DATABASE_URL = os.environ.get('ON_HEROKU')
+DB_URL = None
+
+if DATABASE_URL:
+    DATABASES = {
+        dj_database_url.config(conn_max_age=600, ssl_require=True)
     }
-}
-
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, "db.sqlite3"),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
